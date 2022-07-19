@@ -1,0 +1,6 @@
+# Replace private.registry.com with the host name of your private container registry
+# Save as /etc/rancher/rke2/registries.yaml on each Harvester server
+mirrors:
+  docker.io:
+    endpoint:
+      - "https://repo.ficld.ir"

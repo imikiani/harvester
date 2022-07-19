@@ -1,0 +1,44 @@
+# server_url: https://someserver:8443
+token: TOKEN_VALUE
+os:
+  ssh_authorized_keys:
+    - github:imikiani
+  write_files:
+  - encoding: ""
+    content: test content
+    owner: root
+    path: /etc/test.txt
+    permissions: '0755'
+  hostname: myhost
+  modules:
+    - kvm
+    - nvme
+  sysctl:
+    kernel.printk: "4 4 1 7"
+    kernel.kptr_restrict: "1"
+  dns_nameservers:
+    - 8.8.8.8
+    - 1.1.1.1
+  ntp_servers:
+    - 0.us.pool.ntp.org
+    - 1.us.pool.ntp.org
+  password: rancher
+install:
+  mode: create
+  # networks:
+  #   harvester-mgmt:
+  #     interfaces:
+  #     - name: ens5
+  #     default_route: true
+  #     method: dhcp
+  force_efi: true
+  device: /dev/vda
+  silent: true
+  # iso_url: http://myserver/test.iso
+  poweroff: true
+  no_format: true
+  debug: true
+  tty: ttyS0
+  # vip: 10.10.0.19
+  # vip_hw_addr: 52:54:00:ec:0e:0b
+  # vip_mode: dhcp
